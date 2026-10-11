@@ -32,6 +32,14 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+@Composable
+fun MainScreen() {
+
+
+
+
+
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
