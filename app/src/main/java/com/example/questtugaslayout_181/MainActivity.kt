@@ -106,6 +106,10 @@ fun MainScreen() {
         Spacer(modifier = Modifier.height(16.dp))
     }
 }
+
+
+@Composable
+fun StudentCard(
 }
 
 
