@@ -110,6 +110,70 @@ fun MainScreen() {
 
 @Composable
 fun StudentCard(
+    nameRes: Int,
+    phoneRes: Int?,
+    addressRes: Int,
+    bgColorRes: Int,
+    addressColorRes: Int,
+    isCursive: Boolean
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        colors = CardDefaults.cardColors(containerColor = colorResource(id = bgColorRes)),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.logo_umy),
+                contentDescription = stringResource(id = R.string.logo_desc),
+                modifier = Modifier.size(60.dp)
+            )
+
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(horizontal = 16.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = stringResource(id = nameRes),
+                    color = colorResource(id = R.color.text_white),
+                    fontSize = 20.sp,
+                    fontWeight = if (isCursive) FontWeight.Normal else FontWeight.Bold,
+                    fontFamily = if (isCursive) FontFamily.Cursive else FontFamily.Default
+                )
+
+                if (phoneRes != null) {
+                    Text(
+                        text = stringResource(id = phoneRes),
+                        color = colorResource(id = R.color.text_cyan),
+                        fontSize = 14.sp
+                    )
+                }
+
+                Text(
+                    text = stringResource(id = addressRes),
+                    color = colorResource(id = addressColorRes),
+                    fontSize = 14.sp
+                )
+            }
+
+            Image(
+                painter = painterResource(id = R.drawable.logo_umy),
+                contentDescription = stringResource(id = R.string.logo_desc),
+                modifier = Modifier.size(60.dp)
+            )
+        }
+    }
+}
 }
 
 
