@@ -35,6 +35,78 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Spacer(modifier = Modifier.height(32.dp))
+
+        Text(
+            text = stringResource(id = R.string.title_prodi),
+            fontSize = 28.sp,
+            fontWeight = FontWeight.Bold,
+            color = colorResource(id = R.color.text_black)
+        )
+
+        Text(
+            text = stringResource(id = R.string.title_univ),
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold,
+            color = colorResource(id = R.color.text_black)
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        StudentCard(
+            nameRes = R.string.nama_1,
+            phoneRes = null,
+            addressRes = R.string.alamat_1,
+            bgColorRes = R.color.card_bg_1,
+            addressColorRes = R.color.text_yellow,
+            isCursive = true
+        )
+
+        StudentCard(
+            nameRes = R.string.nama_2,
+            phoneRes = R.string.no_hp_2,
+            addressRes = R.string.alamat_2,
+            bgColorRes = R.color.card_bg_2,
+            addressColorRes = R.color.text_yellow,
+            isCursive = false
+        )
+
+        StudentCard(
+            nameRes = R.string.nama_3,
+            phoneRes = R.string.no_hp_3,
+            addressRes = R.string.alamat_3,
+            bgColorRes = R.color.card_bg_3,
+            addressColorRes = R.color.text_white,
+            isCursive = false
+        )
+
+        StudentCard(
+            nameRes = R.string.nama_4,
+            phoneRes = R.string.no_hp_4,
+            addressRes = R.string.alamat_4,
+            bgColorRes = R.color.card_bg_4,
+            addressColorRes = R.color.text_white,
+            isCursive = false
+        )
+
+        Spacer(modifier = Modifier.weight(1f))
+
+        Text(
+            text = stringResource(id = R.string.copyright),
+            fontSize = 12.sp,
+            color = colorResource(id = R.color.text_black)
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+    }
+}
+}
 
 
 
